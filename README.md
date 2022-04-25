@@ -90,4 +90,3 @@
 HARD
 keep
 Mixed
-soft+
