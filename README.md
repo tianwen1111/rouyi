@@ -91,3 +91,7 @@ HARD
 keep
 Mixed
 soft
+
+
+#数据库分库
+#数据读写库

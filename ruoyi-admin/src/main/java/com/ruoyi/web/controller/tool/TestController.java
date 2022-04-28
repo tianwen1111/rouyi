@@ -103,6 +103,26 @@ public class TestController extends BaseController
             return error("用户不存在");
         }
     }
+
+    @ApiOperation("swaggerTest")
+    @PostMapping("/test")
+    public AjaxResult test(@PathVariable Integer userId){
+        if (!users.isEmpty() && users.containsKey(userId))
+        {
+            users.remove(userId);
+            return success();
+        }
+        else
+        {
+            return error("用户不存在");
+        }
+    }
+
+    @ApiOperation("swaggerTest")
+    @PostMapping("/testEntity")
+    public UserEntity testEntity(UserEntity userEntity){
+        return userEntity;
+    }
 }
 
 @ApiModel("用户实体")
