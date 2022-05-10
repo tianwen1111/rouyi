@@ -1,5 +1,6 @@
 package com.ruoyi.quartz.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
@@ -15,7 +16,7 @@ import java.util.Properties;
 public class ScheduleConfig
 {
     @Bean
-    public SchedulerFactoryBean schedulerFactoryBean(DataSource dataSource)
+    public SchedulerFactoryBean schedulerFactoryBean(@Qualifier("slaveDataSource") DataSource dataSource)
     {
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
         factory.setDataSource(dataSource);
